@@ -5,7 +5,6 @@ use rand::Rng;
 fn main() {
     // println() 普通函数调用
     // println! 是一个宏（macro），而不是函数
-    // 
     println!("Guess the number!");
 
     println!("please input your guess.");
