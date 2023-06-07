@@ -76,5 +76,20 @@ fn main() {
         }
     }
 
+
+    // if let 简洁控制流
+
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {}", max),
+        _ => (),
+    }
+    // 可简写为
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
+
+    // match 和 if let 之间的选择依赖特定的环境以及增加简洁度和失去穷尽性检查的权衡取舍。
+    // 换句话说，可以认为 if let 是 match 的一个语法糖，它当值匹配某一模式时执行代码而忽略所有其他值。
 }
 
