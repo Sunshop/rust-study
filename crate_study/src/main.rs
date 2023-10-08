@@ -1,9 +1,11 @@
-use crate::garden::vegetables::Asparagus;
+use crate::garden::{test, vagetables::{test as vTest, Asparagus}};
 
 pub mod garden;
 
 fn main() {
     let plant = Asparagus {};
     println!("I'm growing {:?}!", plant);
-    println!("Hello, world!");
+    
+    test();
+    vTest();
 }
