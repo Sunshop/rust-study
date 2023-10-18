@@ -54,12 +54,28 @@ mod back_of_house {
     fn cook_order() {}
 }
 
+use crate::front_of_house::hosting;
+
+mod customer {
+    pub fn eat_at_restaurant() {
+        // use 只能创建 use 所在的特定作用域内的短路径
+        // error 报错
+        hosting::add_to_waitlist();
+
+        // 修正
+        super::hosting::add_to_waitlist();
+    }
+}
+
 pub fn eat_at_restaurant() {
     // 绝对路径
     crate::front_of_house::hosting::add_to_waitlist();
 
     // 相对路径
     front_of_house::hosting::add_to_waitlist();
+
+    // 使用use关键字
+    hosting::add_to_waitlist();
 
     // 使用关联函数创建实例
     // 黑麦土司为早餐
